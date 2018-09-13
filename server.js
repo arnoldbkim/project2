@@ -14,10 +14,10 @@ app.set("view engine", "handlebars");
 app.use(express.static(__dirname + '/public'));
 
 // Routes
-app.get("/", function (req, res) {
-  res.render("reservations");
-});
 
+
+
+require ("./routes/htmlRoutes.js")(app);
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function () {
   // Log (server-side) when our server has started
