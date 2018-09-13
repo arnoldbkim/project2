@@ -1,16 +1,16 @@
-<h1 class="center-align grey-text text-darken-2">
-  <span>L</span>os
-  <span>A</span>ngeles Reserve</h1>
+<h1 id="title" class="center-align grey-text text-darken-2">
+  <span id="los-angeles">L</span>os
+  <span id="los-angeles">A</span>ngeles Reserve</h1>
 
 
 <section class="slider z-depth-3">
   <ul class="slides">
     <li>
-      <img class="responsive-img" src="../public/styles/img/city.jpeg">
+      <img class="responsive-img" src="/img/city.jpeg">
       <!-- random image -->
     </li>
     <li>
-      <img class="responsive-img" src="../public/styles/img/restaurant.jpeg">
+      <img class="responsive-img" src="/img/restaurant.jpeg">
       <!-- random image -->
     </li>
 
@@ -18,85 +18,66 @@
   </div>
 </section>
 
-<section class="section section-icons center">
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m4">
-        <div id="location" class="card-panel z-depth-2 grey darken-1 ">
-          <i class="material-icons large white-text"> room</i>
-          <h3 class="white-text">Choose a location</h3>
-        </div>
-      </div>
+<section id="location-section">
+  <div id="location-form" class="card-panel blue-grey lighten-4 z-depth-4">
 
-      <div class="col s12 m4">
-        <div id="reservation" class="card-panel z-depth-2 grey darken-1">
-          <i class="material-icons large white-text"> group_add</i>
-          <h3 class="white-text">Make a Reservation</h3>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div id="memories" class="card-panel z-depth-2 grey darken-1">
-          <i class="material-icons large white-text"> mood</i>
-          <h3 class="white-text">Create lasting memories</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<form>
-  <div class="input-field col s12">
-    <div class="form-group mb-2">
-      <label for="location"></label>
-      <select class="form-control" id="location">
-        <option value="disabled" disabled selected>Choose a location</option>
-        <option value="downtown_la">Downtown LA</option>
-        <option value="beverly_hills">Beverly Hills</option>
-        <option value="hollywood">Hollywood</option>
-        <option value="koreatown">Koreatown</option>
-        <option value="Santa Monica">Santa Monica</option>
-      </select>
-    </div>
-
-    <div class="input-field col s12">
-      <div class="form-group mb-2">
-        <label id="type-label" for="type"></label>
-        <select class="form-control" id="type">
-          <option value="" disabled selected> Pick an activity</option>
-          <option value="1">Hotels</option>
-          <option value="2">Restaurants</option>
-          <option value="3">Attractions</option>
-        </select>
-      </div>
-
+    <form>
       <div class="input-field col s12">
-        <div class="form-group mb-2">
-          <label for="price"></label>
-          </br>
-          <select class="form-control" id="price">
-            <option value="" disabled selected>Select a price range</option>
-            <option value="1">$</option>
-            <option value="2">$$</option>
-            <option value="3">$$$</option>
+        <div class="location-box">
+          <label for="location"></label>
+          <select class="form-control" id="location">
+            <option value="disabled" disabled selected> Choose a location</option>
+            <option class="others" value="downtown_la">Downtown LA</option>
+            <option value="beverly_hills">Beverly Hills</option>
+            <option value="hollywood">Hollywood</option>
+            <option value="koreatown">Koreatown</option>
+            <option value="Santa Monica">Santa Monica</option>
           </select>
         </div>
 
-        <button class="btn waves-effect waves-light btn-large" type="submit" name="action" id="submit"> Reserve
-          <i class="material-icons right">send</i>
-        </button>
+        <div class="input-field col s12">
+          <div class="type-box">
+            <label id="type-label" for="type"></label>
+            <select class="form-control" id="type">
+              <option value="" disabled selected> Pick an activity</option>
+              <option value="1">Hotels</option>
+              <option value="2">Restaurants</option>
+              <option value="3">Attractions</option>
+            </select>
+          </div>
 
-</form>
+          <div class="input-field col s12">
+            <div class="price-box">
+              <label for="price"></label>
+              </br>
+              <select class="form-control" id="price">
+                <option value="" disabled selected>Select a price range</option>
+                <option value="1">$</option>
+                <option value="2">$$</option>
+                <option value="3">$$$</option>
+              </select>
+            </div>
+
+            <button class="btn waves-effect waves-light btn-large blue darken-4" type="submit" name="action" id="reservebtn"> Reserve
+              <i class="material-icons right">send</i>
+            </button>
+
+    </form>
+    </div>
+</section>
+
+
+
 
 <!-- Popular Locations -->
 <section id="popular" class="section section-popular scrollspy">
-  <h2> Popular Locations </h2>
+  <h2 id="popular-locations"> Popular Locations </h2>
   <div class="container">
     <div class="row">
       <div class="col s12 m4">
         <div class="card z-depth-4">
           <div class="card-image">
-            <img src="../public/styles/img/downtown_la.jpeg" alt="Downtown Los Angeles">
+            <img src="/img/downtown_la.jpeg" alt="Downtown Los Angeles">
           </div>
           <div class="card-content">
             Downtown
@@ -107,7 +88,7 @@
       <div class="col s12 m4">
         <div class="card z-depth-4">
           <div class="card-image">
-            <img src="../public/styles/img/hollywood.jpeg" alt="Hollywood">
+            <img src="/img/hollywood.jpeg" alt="Hollywood">
           </div>
           <div class="card-content">
             Hollywood
@@ -118,7 +99,7 @@
       <div class="col s12 m4">
         <div class="card z-depth-4">
           <div class="card-image santa-monica">
-            <img src="../public/styles/img/santa_monica.jpeg" alt="Santa Monica" class="santa-monica-img">
+            <img src="/img/santa_monica.jpeg" alt="Santa Monica" class="santa-monica-img">
           </div>
           <div class=" card-content ">
             Santa Monica
