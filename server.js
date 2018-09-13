@@ -11,12 +11,11 @@ var PORT = process.env.PORT || 8080;
 // Set Handlebars as the default templating engine.
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-
+app.use(express.static(__dirname + '/public'));
 
 // Routes
-app.get("/index", function (req, res) {
-  res.render("index");
+app.get("/", function (req, res) {
+  res.render("reservations");
 });
 
 // Start our server so that it can begin listening to client requests.
