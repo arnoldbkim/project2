@@ -1,3 +1,154 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+/* Styling for the index page */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#title {
+  font-family: sans-serif;
+  font-variant: small-caps;
+  font-weight: 10px;
+  letter-spacing: 40px;
+  text-shadow: 2px 4px 5px #607d8b;
+  margin-top: 10px;
+}
+
+#los-angeles {
+  color: #000000;
+  font-weight: 250px;
+  font-size: 100px;
+  text-shadow: 2px 4px 10px;
+}
+
+.slider {
+  margin-top: -10px;
+}
+
+#location-form {
+  margin: 20px;
+  padding: 20px;
+  height: 700px;
+
+}
+
+#reservation {
+  height: 275px;
+}
+
+.container {
+  width: 100%;
+}
+
+#location {
+  height: 275px;
+}
+
+#memories {
+  height: 275px;
+}
+
+
+.card-content {
+  font-family: sans-serif;
+  font-size: 24px;
+  font-variant: small-caps;
+  font-weight: 200px;
+  letter-spacing: 12px;
+  margin-top: 10px;
+}
+
+.santa-monica {
+  height: 270px;
+}
+
+.santa-monica-img {
+  height: 270px;
+}
+
+#popular-locations {    
+  margin-left: 10px;
+  font-family: sans-serif;
+  font-variant: small-caps;
+  font-weight: 300px;
+  letter-spacing: 20px;
+  margin-top: 10px;
+}
+
+footer {
+  height: 100px;
+  margin-top: 150px;
+}
+
+.location-box {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.type-box {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.price-box {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+/* Reservations */
+
+#reserve {
+  font-family: sans-serif;
+  font-variant: small-caps;
+  font-weight: 10px;
+  letter-spacing: 20px;
+  text-shadow: 2px 4px 5px #607d8b;
+  margin-top: 10px;
+}
+
+#reserve-form {
+  color: #D7DDE8;
+  margin-top: 50px;
+  width: 1000px;
+  position: relative;
+  left: 150px;
+  height: 450px;
+}
+
+h5 {
+  font-family: sans-serif;
+  font-variant: small-caps;
+  font-weight: 5px;
+  letter-spacing: 10px;
+  text-shadow: 2px 4px 5px #607d8b;
+  margin-top: 10px;
+}
+
+#timebtn {
+  margin: 50px;
+  position: relative;
+  left: 425px;
+}
+
+#popular {
+  margin-top: 120px;
+}
+
+#location-section {
+  margin-top: 80px;
+}
+
+#reserve-form-section{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 400px;
+}
+
+#makereservationbtn {
+  margin-top: 35px;
+  position: relative;
+  left: 725px;
+}
