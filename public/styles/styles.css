@@ -106,15 +106,15 @@ footer {
   font-weight: 10px;
   letter-spacing: 20px;
   text-shadow: 2px 4px 5px #607d8b;
+  font-size: 40px;
+  letter-spacing: 2vw;
   margin-top: 10px;
 }
 
 #reserve-form {
   color: #D7DDE8;
   margin-top: 50px;
-  width: 1000px;
   position: relative;
-  left: 150px;
   height: 450px;
 }
 
@@ -125,13 +125,9 @@ h5 {
   letter-spacing: 10px;
   text-shadow: 2px 4px 5px #607d8b;
   margin-top: 10px;
-}
+} 
 
-#timebtn {
-  margin: 50px;
-  position: relative;
-  left: 425px;
-}
+
 
 #popular {
   margin-top: 120px;
@@ -144,11 +140,11 @@ h5 {
 #reserve-form-section{
   margin-top: 50px;
   margin-bottom: 50px;
-  height: 400px;
+  /* padding-left: 100px; */
+  
 }
 
 #makereservationbtn {
   margin-top: 35px;
   position: relative;
-  left: 725px;
 }

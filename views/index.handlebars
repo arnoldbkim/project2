@@ -1,6 +1,6 @@
-<h1 id="title" class="center-align grey-text text-darken-2">
-  <span id="los-angeles">L</span>os
-  <span id="los-angeles">A</span>ngeles Reserve</h1>
+<h1 id="title" class="center-align grey-text text-darken-2 flow-text">
+  <span id="los-angeles" class = "flow-text">L</span>os
+  <span id="los-angeles" class = "flow-text">A</span>ngeles Reserve</h1>
 
 
 <section class="slider z-depth-3">
@@ -71,7 +71,7 @@
 
 <!-- Popular Locations -->
 <section id="popular" class="section section-popular scrollspy">
-  <h2 id="popular-locations"> Popular Locations </h2>
+  <h2 id="popular-locations" class = "flow-text"> Popular Locations </h2>
   <div class="container">
     <div class="row">
       <div class="col s12 m4">
@@ -121,15 +121,12 @@
   $(document).ready(function () {
     $('select').formSelect();
   });
-
   //Slider
   const slider = document.querySelector('.slider');
-
   M.Slider.init(slider, {
     indicators: false,
     height: 400,
     transition: 500,
     interval: 6000
   });
-
 </script>
