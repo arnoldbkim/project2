@@ -10,7 +10,9 @@ var db = {};
 console.log(env);
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  var sequelize = new Sequelize(process.env[config.use_env_variable], {
+    dialect: 'mysql'
+  });
 } else {
   var sequelize = new Sequelize(
     config.database,
