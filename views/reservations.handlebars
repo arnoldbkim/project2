@@ -122,8 +122,7 @@
     name: $("#reserve-name").val().trim(),
     email: $("#reserve-email").val().trim(),
     phoneNumber: $("#reserve-phone").val().trim(),
-    attractions: $("#attractions").formSelect().trim(),
-    time: $("#time").formSelect().trim(),
+   
   };
     console.log(newPost);
   $.post("/api/tables", newPost,
