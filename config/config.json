@@ -2,9 +2,10 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "exampledb",
+    "database": "travel_db",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "use_env_variable": "JAWSDB_URL"
   },
   "test": {
     "username": "root",
