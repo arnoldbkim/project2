@@ -5,58 +5,81 @@
 <div class= "row">
 <div class="col s12 m12 l12 ">
   <div class = "center-align">
-  <button class="btn waves-effect waves-light btn-large blue darken-4 z-depth-2" type="submit" name="action">
-    Get Reservation times
+  <a href = "/tables"><button class="btn waves-effect waves-light btn-large blue darken-4 z-depth-2" type="submit" name="action">
+    Check Reservation Status
     <i class="material-icons right">access_time</i>
-  </button>
+  </button></a>
   </div>
 </div>
 </div>
 
-<ul id='dropdown1' class='dropdown-content'>
-  <li>
-    <a href="#!">12:00pm</a>
-  </li>
-  <li>
-    <a href="#!">5:00pm</a>
-  </li>
-  <li>
-    <a href="#!">8:00pm</a>
-  </li>
-</ul>
-</h5>
 
 <section class = "row" id="reserve-form-section">
-  <div class="col s3 m3 l3">
-        
-  </div>
-  <div id="reserve-form" class="col s6 m6 l6 blue-grey lighten-4 z-depth-3">
-    <div class="row">
-      <form class="col s12">
+  <div class="center-align">
         <div class="row">
-          <div class="input-field col s6">
-            <input id="first_name" type="text" class="validate">
-            <label for="first_name" class="black-text">First Name</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name" class="black-text">Last Name</label>
+          <div class="input-field col s12">
+            <input id="reserve-name" type="text" class="validate">
+            <label for="reserve-name" class="black-text">Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email" class="black-text">
+            <input id="reserve-email" type="email" class="validate">
+            <label for="reserve-email" class="black-text">
               Email</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="icon_telephone" type="tel" class="validate">
-            <label for="icon_telephone" class="black-text">Telephone</label>
+            <input id="reserve-phone" type="tel" class="validate">
+            <label for="reserve-phone" class="black-text">Telephone</label>
           </div>
         </div>
-        <button class="btn waves-effect waves-light btn-large blue darken-4 z-depth-2" type="submit" name="action" id="makereservationbtn">
+        <div class="row">
+          <div class="input-field col s12">
+           <select id='destinations'>
+             <option value="disabled selected" >Choose your Destination</option>
+             <option value="1">Downtown</option>
+             <option value="2">Hollywood</option>
+             <option value="3">Santa Monica</option>
+           </select>
+         </div>
+        </div>
+         <div class="row">
+          <div class="input-field col s12">
+           <select id="attractions">
+             <option value=""disabled selected >Choose your Attraction</option>
+             <option value="1">Badmaash</option>
+             <option value="1">Broken Spanish</option>
+             <option value="1">Grand Central Market</option>
+             <option value="1">Freehand</option>
+             <option value="1">Omni</option>
+             <option value="1">Ritz-Carlton</option>
+             <option value="2">Guisados</option>
+             <option value="2">Luv2eat Thai Bistro</option>
+             <option value="2">Kimpton La Peer Hotel</option>
+             <option value="2">Petit Ermitage</option>
+             <option value="2">The Jeremy West Hollywood</option>
+             <option value="2">Father's Office</option>
+             <option value="3">Fig</option>
+             <option value="3">Melisse</option>
+             <option value="3">Courtyard by Marriott</option>
+             <option value="3">Hotel Casa del Mar</option>
+             <option value="3">Loews Santa Monica Beach Hotel</option>
+           </select>
+         </div>
+        </div>
+         <div class="row">
+          <div class="input-field col s12">
+           <select id="time">
+             <option value=""disabled selected >Time</option>
+             <option value="1">12:00pm</option>
+             <option value="3">5:00pm</option>
+             <option value="3">8:00pm</option>
+           </select>
+         </div>
+        </div>
+        <button class="btn waves-effect waves-light btn-large blue darken-4 z-depth-2" type="submit" id="submit">
           Make Reservation
         </button>
     
@@ -71,9 +94,57 @@
   <p class="flow-text ">Los Angeles Reserve &copy; 2018</p>
 </footer>
 
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js "></script>
+<script type="text/javascript">
+  
   $(document).ready(function () {
     $('.modal').modal();
     $('.dropdown-trigger').dropdown();
+     $('select').formSelect();
+
+  });
+
+
+  $(document).ready(function(){
+    $("#attractions").hide();
+     $("#destinations").on("change", function(evt) {
+       var newVal = $("#destinations").val();
+       $("#attractions").val(newVal);
+       $("#attractions").formSelect();
+     })
+  });
+  
+
+  $("#submit").on("click", function(event) {
+  event.preventDefault();
+
+  var newPost = {
+    name: $("#reserve-name").val().trim(),
+    email: $("#reserve-email").val().trim(),
+    phoneNumber: $("#reserve-phone").val().trim(),
+    attractions: $("#attractions").formSelect().trim(),
+    time: $("#time").formSelect().trim(),
+  };
+    console.log(newPost);
+  $.post("/api/tables", newPost,
+        function(data) {
+
+          // If a table is available... tell user they are booked.
+          if (data) {
+            alert("You are officially booked!");
+          }
+
+          // If a table is available... tell user they on the waiting list.
+          else {
+            alert("Sorry, we are currently full.");
+          }
+
+          $("#reserve-name").val("");
+          $("#reserve-email").val("");
+          $("#reserve-phone").val("");
+          
+        });
+
+
   });
 </script>

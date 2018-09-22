@@ -1,36 +1,36 @@
-var db = require("../models");
+var tableData = require("../models/tableData.js");
+
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+
+  app.get("/api/tables", function(req, res) {
+    res.json(tableData);
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
+ 
+
+  app.post("/api/tables", function(req, res) {
+    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
+    // It will do this by sending out the value "true" have a table
+    // req.body is available since we're using the body-parser middleware
+    if (tableData.length < 5) {
+      tableData.push(req.body);
+      res.json(true);
+    }
+    else {
+      waitListData.push(req.body);
+      res.json(false);
+    }
   });
 
-  app.post("/api/posts", function(req, res) {
-    db.Post.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
+  // ---------------------------------------------------------------------------
+  // I added this below code so you could clear out the table while working with the functionality.
+  // Don"t worry about it!
 
-  // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
-    db.Post.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function(dbPost) {
-      res.json(dbPost);
-    });
+  app.post("/api/clear", function(req, res) {
+    // Empty out the arrays of data
+    tableData.length = [];
+
+    res.json({ ok: true });
   });
 };
