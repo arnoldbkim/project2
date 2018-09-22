@@ -1,5 +1,6 @@
-// Importing Activity table from models directory
-var db = require("../models");
+
+var path = require("path");
+
 
 // Creating and exporting app to use on server.js
 module.exports = function (app) {
@@ -28,6 +29,10 @@ module.exports = function (app) {
         example: dbExample
       });
     });
+  });
+
+  app.get("/tables", function(req, res) {
+    res.render("tables");
   });
 
   // Render 404 page for any unmatched routes
