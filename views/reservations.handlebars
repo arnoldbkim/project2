@@ -102,17 +102,17 @@
     $('.dropdown-trigger').dropdown();
      $('select').formSelect();
 
-  });
+ 
 
 
-  $(document).ready(function(){
+
     $("#attractions").hide();
      $("#destinations").on("change", function(evt) {
        var newVal = $("#destinations").val();
        $("#attractions").val(newVal);
        $("#attractions").formSelect();
      })
-  });
+
   
 
   $("#submit").on("click", function(event) {
@@ -122,7 +122,8 @@
     name: $("#reserve-name").val().trim(),
     email: $("#reserve-email").val().trim(),
     phoneNumber: $("#reserve-phone").val().trim(),
-   
+    attractions: $("#attractions").find(":selected").text(),
+    time: $("#time").find(":selected").text()
   };
     console.log(newPost);
   $.post("/api/tables", newPost,
@@ -145,5 +146,6 @@
         });
 
 
+  });
   });
 </script>

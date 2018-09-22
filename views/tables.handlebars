@@ -62,15 +62,16 @@
           var tableList = $("#tableList");
 
           // Then display the fields in the HTML (Section Name, Date, URL)
-          var listItem = $("<li class='list-group-item mt-4'>");
+          var listItem = $("<li class='list-group-item mt-8'>");
 
           listItem.append(
             $("<h2>").text("ID #" + (i + 1)),
             $("<hr>"),
             $("<h2>").text("Name: " + tableData[i].name),
             $("<h2>").text("Email: " + tableData[i].email),
-            $("<h2>").text("Phone: " + tableData[i].phoneNumber)
-            
+            $("<h2>").text("Phone: " + tableData[i].phoneNumber),
+            $("<h2>").text("Attraction: " + tableData[i].attractions),
+            $("<h2>").text("Time: " + tableData[i].time)
           );
 
           tableList.append(listItem);
