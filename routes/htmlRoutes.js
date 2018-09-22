@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 
 var path = require("path");
 
-=======
-// Importing Activity table from models directory
-var db = require("../models");
->>>>>>> master
 
 // Creating and exporting app to use on server.js
 module.exports = function (app) {
@@ -36,13 +31,10 @@ module.exports = function (app) {
     });
   });
 
-<<<<<<< HEAD
   app.get("/tables", function(req, res) {
     res.render("tables");
   });
 
-=======
->>>>>>> master
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
